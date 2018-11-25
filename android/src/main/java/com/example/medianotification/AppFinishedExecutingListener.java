@@ -11,7 +11,7 @@ public class AppFinishedExecutingListener extends AsyncTask<NotificationPanel, V
 
         while(!main_activity.isFinishing()) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(990);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

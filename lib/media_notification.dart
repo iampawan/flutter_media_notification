@@ -33,5 +33,9 @@ class MediaNotification {
 
   static setListener(String event, Function callback) {
     _listeners.addAll({event: callback});
-  } 
+  }
+
+  static stopSound() async {
+    await _channel.invokeMethod('stopSound');
+  }
 }

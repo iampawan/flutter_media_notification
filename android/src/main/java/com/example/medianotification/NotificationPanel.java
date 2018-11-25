@@ -46,15 +46,14 @@ public class NotificationPanel extends Activity {
         this.play = play;
 
         shared = this;
-        Intent intent = new Intent(this, NotificationPanel.class);
-        intent.putExtra("methodName","cancel");
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(parent, 0, intent, 0);
+        //Intent intent = new Intent(this, NotificationPanel.class);
+        //intent.putExtra("methodName","cancel");
+        //PendingIntent pendingIntent = PendingIntent.getBroadcast(parent, 0, intent, 0);
         nBuilder = new NotificationCompat.Builder(parent, "media_notification")
                 .setSmallIcon(R.drawable.ic_stat_music_note)
                 .setPriority(Notification.STREAM_DEFAULT)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setVibrate(new long[]{0L})
-                .setDeleteIntent(pendingIntent)
                 .setSound(null);
 
         remoteView = new RemoteViews(parent.getPackageName(), R.layout.notificationlayout);
@@ -111,7 +110,7 @@ public class NotificationPanel extends Activity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if(intent.getStringExtra("methodName").equals("cancel")){
-            notificationCancel();
+            //notificationCancel();
         }
     }
 
@@ -144,26 +143,32 @@ public class NotificationPanel extends Activity {
         view.setOnClickPendingIntent(R.id.layout, selectPendingIntent);
     }
 
+    /*
     static public void cancel() {
         if (NotificationPanel.shared != null) {
             NotificationPanel.shared.notificationCancel();
         }
-    }
+    }*/
 
     public void notificationCancel() {
         nManager.cancel(NOTIFICATION_ID);
-        shared = null;
     }
 
     public void closeNotificationIfNotRunning() {
+        return;
+        /*
         boolean running = isAppRunning(parent);
         if (!running) {
             // Remove the notification
             notificationCancel();
         }
+        */
     }
 
     private boolean isAppRunning(Context context) {
+        // return
+        return true;
+/*
         ActivityManager m = (ActivityManager) context.getSystemService( ACTIVITY_SERVICE );
         List<ActivityManager.RunningTaskInfo> runningTaskInfoList =  m.getRunningTasks(10);
         Iterator<ActivityManager.RunningTaskInfo> itr = runningTaskInfoList.iterator();
@@ -176,6 +181,7 @@ public class NotificationPanel extends Activity {
             return false;
         }
         return true; // App is in background or foreground
+        */
     }
 
 

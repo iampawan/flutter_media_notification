@@ -38,10 +38,17 @@ public class MediaNotificationPlugin implements MethodCallHandler {
               show(title, author, play);
               result.success(null);
               break;
+
             case "hide":
               hide();
               result.success(null);
               break;
+
+          case "stopSound":
+              stopSound();
+              result.success(null);
+              break;
+
           default:
               result.notImplemented();
       }
@@ -78,6 +85,10 @@ public class MediaNotificationPlugin implements MethodCallHandler {
 
   private void hide() {
       nPanel.notificationCancel();
+  }
+
+  private void stopSound() {
+
   }
 }
 

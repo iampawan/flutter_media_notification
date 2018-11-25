@@ -36,6 +36,9 @@ public class NotificationReturnSlot extends BroadcastReceiver {
                 context.startActivity(launchIntent);
 
                 MediaNotificationPlugin.callEvent("select");
+                break;
+
+
         }
     }
 }
