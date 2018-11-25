@@ -39,12 +39,36 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  Future<void> stopSound() async {
+    try {
+      await MediaNotification.stopSound();
+    } on PlatformException {
+      print("Exception stopSound");
+    }
+  }
+
+  Future<void> lock() async {
+    try {
+      await MediaNotification.getWifiLock();
+    } on PlatformException {
+      print("Exception getWifiLock");
+    }
+  }
+
+  Future<void> release() async {
+    try {
+      await MediaNotification.releaseWifiLock();
+    } on PlatformException {
+      print("Exception releaseWifiLock");
+    }
+  }
+
   Future<void> hide() async {
     try {
       await MediaNotification.hide();
       setState(() => status = 'hidden');
   } on PlatformException {
-
+      print("Exception hide");
     }
   }
 
@@ -53,7 +77,7 @@ class _MyAppState extends State<MyApp> {
       await MediaNotification.show(title: title, author: author);
       setState(() => status = 'play');
     } on PlatformException {
-
+      print("Exception show");
     }
   }
 
@@ -66,7 +90,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: new Center(
           child: Container(
-            height: 250.0,
+            height: 350.0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -81,6 +105,18 @@ class _MyAppState extends State<MyApp> {
                 FlatButton(
                   child: Text('Hide notification'),
                   onPressed: hide,
+                ),
+                FlatButton(
+                  child: Text('Kill Other Sound'),
+                  onPressed: stopSound,
+                ),
+                FlatButton(
+                  child: Text('WiFi Lock'),
+                  onPressed: lock,
+                ),
+                FlatButton(
+                  child: Text('WiFi Release'),
+                  onPressed: release,
                 ),
                 Text('Status: ' + status)
               ],

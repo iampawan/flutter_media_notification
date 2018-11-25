@@ -7,7 +7,12 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Build;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiManager.WifiLock;
+
 
 /** MediaNotificationPlugin */
 public class MediaNotificationPlugin implements MethodCallHandler {
@@ -39,13 +44,23 @@ public class MediaNotificationPlugin implements MethodCallHandler {
               result.success(null);
               break;
 
-            case "hide":
+          case "hide":
               hide();
               result.success(null);
               break;
 
           case "stopSound":
               stopSound();
+              result.success(null);
+              break;
+
+          case "getWifiLock":
+              getWifiLock();
+              result.success(null);
+              break;
+
+          case "releaseWifiLock":
+              releaseWifiLock();
               result.success(null);
               break;
 
@@ -86,10 +101,17 @@ public class MediaNotificationPlugin implements MethodCallHandler {
   private void hide() {
       nPanel.notificationCancel();
   }
+    private void stopSound() {
+        nPanel.stopSound();
+    }
 
-  private void stopSound() {
+    private void getWifiLock() {
+        nPanel.getWifiLock();
+    }
 
-  }
+    private void releaseWifiLock() {
+        nPanel.releaseWifiLock();
+    }
 }
 
 

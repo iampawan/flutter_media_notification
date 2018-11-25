@@ -6,6 +6,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.net.wifi.WifiManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -105,5 +107,28 @@ public class NotificationPanel extends Activity {
         }
         */
     }
+
+    public void stopSound() {
+        // Vinn med hljod
+        AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        int result = am.requestAudioFocus(null,
+                AudioManager.STREAM_MUSIC,
+                AudioManager.AUDIOFOCUS_GAIN
+        );
+    }
+
+    public void getWifiLock() {
+        WifiManager.WifiLock wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE))
+                .createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.MediaPlayerService");
+        wifiLock.acquire();
+    }
+
+    public void releaseWifiLock() {
+        WifiManager.WifiLock wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE))
+                .createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.MediaPlayerService");
+        wifiLock.release();
+    }
+
+
 }
 

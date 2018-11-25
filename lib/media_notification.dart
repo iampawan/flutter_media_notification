@@ -38,4 +38,13 @@ class MediaNotification {
   static stopSound() async {
     await _channel.invokeMethod('stopSound');
   }
+
+  static getWifiLock() async {
+    await _channel.invokeMethod('getWifiLock');
+  }
+
+  static releaseWifiLock() async {
+    await _channel.invokeMethod('releaseWifiLock');
+  }
+
 }
