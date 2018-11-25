@@ -13,9 +13,11 @@ public class NotificationReturnSlot extends BroadcastReceiver {
             case "prev":
                 MediaNotificationPlugin.callEvent("prev");
                 break;
+
             case "next":
                 MediaNotificationPlugin.callEvent("next");
                 break;
+
             case "toggle":
                 String title = intent.getStringExtra("title");
                 String author = intent.getStringExtra("author");
@@ -24,6 +26,7 @@ public class NotificationReturnSlot extends BroadcastReceiver {
                 MediaNotificationPlugin.show(title, author, action.equals("play"));
                 MediaNotificationPlugin.callEvent(action);
                 break;
+
             case "select":
                 Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
                 context.sendBroadcast(closeDialog);
