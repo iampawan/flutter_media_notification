@@ -25,12 +25,18 @@ public class NotificationPanel extends Activity {
     private String title;
     private String author;
     private boolean play;
+    WifiManager.WifiLock wifiLock;
+    AudioManager audioManager;
 
     public NotificationPanel(Context parent, String title, String author, boolean play) {
         this.parent = parent;
         this.title = title;
         this.author = author;
         this.play = play;
+
+        this.wifiLock = ((WifiManager)parent.getSystemService(Context.WIFI_SERVICE))
+                .createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.gardina.MediaPlayerService");
+        this.audioManager = (AudioManager)parent.getSystemService(Context.AUDIO_SERVICE);
 
         nBuilder = new NotificationCompat.Builder(parent, "media_notification")
                 .setSmallIcon(R.drawable.ic_stat_music_note)
@@ -109,26 +115,24 @@ public class NotificationPanel extends Activity {
     }
 
     public void stopSound() {
-        // Vinn med hljod
-        AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        int result = am.requestAudioFocus(null,
+        this.audioManager.requestAudioFocus(null,
                 AudioManager.STREAM_MUSIC,
                 AudioManager.AUDIOFOCUS_GAIN
         );
     }
 
     public void getWifiLock() {
-        WifiManager.WifiLock wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE))
-                .createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.MediaPlayerService");
-        wifiLock.acquire();
+        this.wifiLock.acquire();
     }
 
     public void releaseWifiLock() {
-        WifiManager.WifiLock wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE))
-                .createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.MediaPlayerService");
-        wifiLock.release();
+        this.wifiLock.release();
     }
 
-
+    @Override
+    protected void onDestroy() {
+        nManager.cancel(NOTIFICATION_ID);
+        super.onDestroy();
+    }
 }
 
