@@ -9,12 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edafb91d-89f7-4d9b-bcdd-831bb6c99f64" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationReturnSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationReturnSlot.java" afterDir="false" />
-    </list>
+    <list default="true" id="edafb91d-89f7-4d9b-bcdd-831bb6c99f64" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +47,8 @@
       <file leaf-file-name="NotificationPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+            <state relative-caret-position="290">
+              <caret line="139" column="48" selection-start-line="139" selection-start-column="48" selection-end-line="139" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5349#5513#0" expanded="true" />
@@ -131,9 +126,9 @@
         <option value="$PROJECT_DIR$/example/android/app/src/main/java/com/example/medianotificationexample/MainActivity.java" />
         <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/lib/media_notification.dart" />
-        <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationReturnSlot.java" />
+        <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" />
       </list>
     </option>
   </component>
@@ -308,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543231773183</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Prevent null error on out of order calls">
+      <created>1543248056938</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543248056938</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -323,7 +325,7 @@
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007987" side_tool="true" weight="0.32916668" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" sideWeight="0.49920127" weight="0.32916668" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49920127" weight="0.3375" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.49920127" visible="true" weight="0.3375" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49920127" weight="0.32916668" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49920127" weight="0.32916668" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
@@ -397,7 +399,8 @@
     <MESSAGE value="Wakelocks" />
     <MESSAGE value="WakeLock virkar" />
     <MESSAGE value="Improved wifi lock and heartbeat release" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved wifi lock and heartbeat release" />
+    <MESSAGE value="Prevent null error on out of order calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prevent null error on out of order calls" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -720,8 +723,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="290">
+          <caret line="139" column="48" selection-start-line="139" selection-start-column="48" selection-end-line="139" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5349#5513#0" expanded="true" />
