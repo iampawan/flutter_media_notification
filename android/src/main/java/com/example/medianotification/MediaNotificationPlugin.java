@@ -12,10 +12,12 @@ import android.media.AudioManager;
 import android.os.Build;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.WifiLock;
+import android.util.Log;
 
 
 /** MediaNotificationPlugin */
 public class MediaNotificationPlugin implements MethodCallHandler {
+    private static final String TAG = "MediaNotificationPanel";
     private static final String CHANNEL_ID = "media_notification";
     private static Registrar registrar;
     private static NotificationPanel nPanel;
@@ -86,6 +88,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
     }
 
     public static void show(String title, String author, boolean play) {
+        Log.i(TAG, "show");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, importance);
@@ -94,23 +97,43 @@ public class MediaNotificationPlugin implements MethodCallHandler {
             NotificationManager notificationManager = registrar.context().getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
-
         nPanel = new NotificationPanel(registrar.context(), title, author, play);
     }
 
     private void hide() {
-        nPanel.notificationCancel();
+        Log.i(TAG, "hide");
+        if (nPanel != null) {
+            nPanel.notificationCancel();
+        } else {
+            Log.e(TAG, "Villa hide - no panel");
+        }
     }
     private void stopSound() {
-        nPanel.stopSound();
+        Log.i(TAG, "stopSound");
+        if (nPanel != null) {
+            nPanel.stopSound();
+        } else {
+            Log.e(TAG, "Villa stopSound - no panel");
+        }
     }
 
     private void getWifiLock() {
-        nPanel.getWifiLock();
+        Log.i(TAG, "getWifiLock");
+        if (nPanel != null) {
+            nPanel.getWifiLock();
+        } else {
+            Log.e(TAG, "Villa getWifiLock - no panel");
+        }
+
     }
 
     private void releaseWifiLock() {
-        nPanel.releaseWifiLock();
+        Log.i(TAG, "releaseWifiLock");
+        if (nPanel != null) {
+            nPanel.releaseWifiLock();
+        } else {
+            Log.e(TAG, "Villa releaseWifiLock - no panel");
+        }
     }
 }
 

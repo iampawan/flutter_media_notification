@@ -11,11 +11,13 @@ import android.net.wifi.WifiManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class NotificationPanel extends Activity {
+    private static final String TAG = "MediaNotificationPanel";
     private static final int NOTIFICATION_ID = 1565461;
     Timer t = new Timer();
     private Context parent;
@@ -70,11 +72,10 @@ public class NotificationPanel extends Activity {
             public void run() {
                 closeNotificationIfNotRunning();
             }
-        }, 50, 950);
+        }, 0, 1000);
     }
 
     public void setListeners(RemoteViews view){
-        // Пауза/Воспроизведение
         Intent intent = new Intent(parent, NotificationReturnSlot.class)
             .setAction("toggle")
             .putExtra("title", this.title)
@@ -104,6 +105,7 @@ public class NotificationPanel extends Activity {
     }
 
     public void closeNotificationIfNotRunning() {
+        Log.i(TAG, "Gísli's Heartbeat");
         return;
         /*
         boolean running = isAppRunning(parent);
