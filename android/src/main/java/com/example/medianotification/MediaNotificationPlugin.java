@@ -104,8 +104,6 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         Log.i(TAG, "hide");
         if (nPanel != null) {
             nPanel.notificationCancel();
-        } else {
-            Log.e(TAG, "Villa hide - no panel");
         }
     }
     private void stopSound() {
@@ -113,7 +111,9 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.stopSound();
         } else {
-            Log.e(TAG, "Villa stopSound - no panel");
+            show("RÚV", "", false);
+            nPanel.stopSound();
+            hide();
         }
     }
 
@@ -122,7 +122,9 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.getWifiLock();
         } else {
-            Log.e(TAG, "Villa getWifiLock - no panel");
+            show("RÚV", "", false);
+            nPanel.getWifiLock();
+            hide();
         }
 
     }
@@ -132,8 +134,14 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.releaseWifiLock();
         } else {
-            Log.e(TAG, "Villa releaseWifiLock - no panel");
+            show("RÚV", "", false);
+            nPanel.releaseWifiLock();
+            hide();
         }
+    }
+
+    public void onDestroy() {
+        hide();
     }
 }
 

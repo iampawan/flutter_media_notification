@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -28,9 +29,9 @@ public class NotificationPanel extends Activity {
     private String title;
     private String author;
     private boolean play;
-    private final WifiManager.WifiLock wifiLock;
-    private final PowerManager.WakeLock wakeLock;
-    private final AudioManager audioManager;
+    private WifiManager.WifiLock wifiLock;
+    private PowerManager.WakeLock wakeLock;
+    private AudioManager audioManager;
     PowerManager powerManager;
 
     public NotificationPanel(Context parent, String title, String author, boolean play) {
@@ -41,22 +42,28 @@ public class NotificationPanel extends Activity {
 
 
         powerManager = (PowerManager)parent.getSystemService(Context.POWER_SERVICE);
-
-        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ruv.wifilock.player");
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ruv.wifilock.player:wakeLock");
         wakeLock.setReferenceCounted(false);
 
         WifiManager wifiManager = ((WifiManager)parent.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
-        wifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.gardina.MediaPlayerService");
+        wifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.gardina:wifilock");
         wifiLock.setReferenceCounted(false);
 
         audioManager = (AudioManager)parent.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
 
         nBuilder = new NotificationCompat.Builder(parent, "media_notification")
+                .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_stat_music_note)
-                .setPriority(Notification.STREAM_DEFAULT)
-                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setVibrate(new long[]{0L})
                 .setSound(null);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            nBuilder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+        }
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+            nBuilder.setPriority(Notification.STREAM_DEFAULT);
+        }
 
         remoteView = new RemoteViews(parent.getPackageName(), R.layout.notificationlayout);
 
@@ -127,6 +134,16 @@ public class NotificationPanel extends Activity {
     }
 
     public void getWifiLock() {
+        if (wifiLock == null) {
+            WifiManager wifiManager = ((WifiManager)parent.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
+            wifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.gardina:wifilock");
+            wifiLock.setReferenceCounted(false);
+        }
+        if (wakeLock == null) {
+            powerManager = (PowerManager)parent.getSystemService(Context.POWER_SERVICE);
+            wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ruv.wifilock.player:wakeLock");
+            wakeLock.setReferenceCounted(false);
+        }
         if (!wifiLock.isHeld()) {
             wifiLock.acquire();
         }
@@ -146,14 +163,16 @@ public class NotificationPanel extends Activity {
     }
 
     public void releaseWifiLock() {
-        if (wifiLock.isHeld()) {
+        if (wifiLock != null && wifiLock.isHeld()) {
             wifiLock.release();
         }
-        if (wakeLock.isHeld()) {
+        if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }
-        t.cancel();
-        t = null;
+        if (t != null) {
+            t.cancel();
+            t = null;
+        }
     }
 
     @Override

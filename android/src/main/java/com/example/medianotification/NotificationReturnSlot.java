@@ -37,8 +37,6 @@ public class NotificationReturnSlot extends BroadcastReceiver {
 
                 MediaNotificationPlugin.callEvent("select");
                 break;
-
-
         }
     }
 }
