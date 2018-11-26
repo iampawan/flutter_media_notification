@@ -45,8 +45,8 @@ public class NotificationPanel extends Activity {
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ruv.wifilock.player");
         wakeLock.setReferenceCounted(false);
 
-        wifiLock = ((WifiManager)parent.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
-        wifiLock.createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.gardina.MediaPlayerService");
+        WifiManager wifiManager = ((WifiManager)parent.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
+        wifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.gardina.MediaPlayerService");
         wifiLock.setReferenceCounted(false);
 
         audioManager = (AudioManager)parent.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
@@ -138,16 +138,23 @@ public class NotificationPanel extends Activity {
         if (!wifiLock.isHeld()) {
             wifiLock.acquire();
         }
+        if (!wakeLock.isHeld()) {
+            wakeLock.acquire();
+        }
     }
 
     public void releaseWifiLock() {
         if (wifiLock.isHeld()) {
             wifiLock.release();
         }
+        if (wakeLock.isHeld()) {
+            wakeLock.release();
+        }
     }
 
     @Override
     protected void onDestroy() {
+        Log.i(TAG, "Media Gardina onDestroy");
         nManager.cancel(NOTIFICATION_ID);
         super.onDestroy();
     }
