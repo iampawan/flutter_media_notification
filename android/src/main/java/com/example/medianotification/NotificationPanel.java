@@ -20,7 +20,7 @@ import java.util.TimerTask;
 public class NotificationPanel extends Activity {
     private static final String TAG = "MediaNotificationPanel";
     private static final int NOTIFICATION_ID = 1565461;
-    Timer t = new Timer();
+    Timer t;
     private Context parent;
     private NotificationManager nManager;
     private NotificationCompat.Builder nBuilder;
@@ -76,14 +76,6 @@ public class NotificationPanel extends Activity {
 
         nManager = (NotificationManager) parent.getSystemService(Context.NOTIFICATION_SERVICE);
         nManager.notify(NOTIFICATION_ID, notification);
-
-        // Setup listener
-        t.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                closeNotificationIfNotRunning();
-            }
-        }, 0, 1000);
     }
 
     public void setListeners(RemoteViews view){
@@ -141,6 +133,16 @@ public class NotificationPanel extends Activity {
         if (!wakeLock.isHeld()) {
             wakeLock.acquire();
         }
+        // Setup listener
+        if (t == null) {
+            t = new Timer();
+            t.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    closeNotificationIfNotRunning();
+                }
+            }, 1000, 1000);
+        }
     }
 
     public void releaseWifiLock() {
@@ -150,12 +152,15 @@ public class NotificationPanel extends Activity {
         if (wakeLock.isHeld()) {
             wakeLock.release();
         }
+        t.cancel();
+        t = null;
     }
 
     @Override
     protected void onDestroy() {
         Log.i(TAG, "Media Gardina onDestroy");
         nManager.cancel(NOTIFICATION_ID);
+        t.cancel();
         super.onDestroy();
     }
 }
