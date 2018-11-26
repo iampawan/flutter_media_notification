@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.net.wifi.WifiManager;
+import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -27,8 +28,10 @@ public class NotificationPanel extends Activity {
     private String title;
     private String author;
     private boolean play;
-    WifiManager.WifiLock wifiLock;
-    AudioManager audioManager;
+    private final WifiManager.WifiLock wifiLock;
+    private final PowerManager.WakeLock wakeLock;
+    private final AudioManager audioManager;
+    PowerManager powerManager;
 
     public NotificationPanel(Context parent, String title, String author, boolean play) {
         this.parent = parent;
@@ -36,9 +39,17 @@ public class NotificationPanel extends Activity {
         this.author = author;
         this.play = play;
 
-        this.wifiLock = ((WifiManager)parent.getSystemService(Context.WIFI_SERVICE))
-                .createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.gardina.MediaPlayerService");
-        this.audioManager = (AudioManager)parent.getSystemService(Context.AUDIO_SERVICE);
+
+        powerManager = (PowerManager)parent.getSystemService(Context.POWER_SERVICE);
+
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ruv.wifilock.player");
+        wakeLock.setReferenceCounted(false);
+
+        wifiLock = ((WifiManager)parent.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
+        wifiLock.createWifiLock(WifiManager.WIFI_MODE_FULL, "ruv.wifilock.gardina.MediaPlayerService");
+        wifiLock.setReferenceCounted(false);
+
+        audioManager = (AudioManager)parent.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
 
         nBuilder = new NotificationCompat.Builder(parent, "media_notification")
                 .setSmallIcon(R.drawable.ic_stat_music_note)
@@ -124,11 +135,15 @@ public class NotificationPanel extends Activity {
     }
 
     public void getWifiLock() {
-        this.wifiLock.acquire();
+        if (!wifiLock.isHeld()) {
+            wifiLock.acquire();
+        }
     }
 
     public void releaseWifiLock() {
-        this.wifiLock.release();
+        if (wifiLock.isHeld()) {
+            wifiLock.release();
+        }
     }
 
     @Override
