@@ -62,7 +62,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
                 break;
 
             case "releaseWifiLock":
-                releaseWifiLock();
+                releaseLocks();
                 result.success(null);
                 break;
 
@@ -97,6 +97,9 @@ public class MediaNotificationPlugin implements MethodCallHandler {
             NotificationManager notificationManager = registrar.context().getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+        if (nPanel != null) {
+            nPanel.releaseLocks();
+        }
         nPanel = new NotificationPanel(registrar.context(), title, author, play);
     }
 
@@ -129,13 +132,13 @@ public class MediaNotificationPlugin implements MethodCallHandler {
 
     }
 
-    private void releaseWifiLock() {
+    private void releaseLocks() {
         Log.i(TAG, "releaseWifiLock");
         if (nPanel != null) {
-            nPanel.releaseWifiLock();
+            nPanel.releaseLocks();
         } else {
             show("RÚV", "", false);
-            nPanel.releaseWifiLock();
+            nPanel.releaseLocks();
             hide();
         }
     }
