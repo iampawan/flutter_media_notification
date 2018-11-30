@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="edafb91d-89f7-4d9b-bcdd-831bb6c99f64" name="Default" comment="Cleanup and fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,41 +35,50 @@
       <file leaf-file-name="MediaNotificationPlugin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-989">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+            <state relative-caret-position="105">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
-                <element signature="e#4560#4561#0" expanded="true" />
-                <element signature="e#4582#4583#0" expanded="true" />
+                <element signature="imports" expanded="true" />
                 <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+            <state relative-caret-position="15">
+              <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7091#7092#0" expanded="true" />
-                <element signature="e#7139#7140#0" expanded="true" />
-                <element signature="e#8312#8313#0" expanded="true" />
-                <element signature="e#8347#8348#0" expanded="true" />
-                <element signature="e#8618#8782#0" expanded="true" />
-                <element signature="e#8781#8782#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -131,25 +139,125 @@
         <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/AppFinishedExecutingListener.java" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/example/android/app/src/main/java/com/example/medianotificationexample/MainActivity.java" />
-        <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/lib/media_notification.dart" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationReturnSlot.java" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java" />
+        <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="636" />
+    <option name="x" value="756" />
     <option name="y" value="23" />
-    <option name="width" value="1284" />
+    <option name="width" value="1164" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="flutter_media_notification" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
+              <item name="com.example.medianotification" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+              <item name="android" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+              <item name="android" type="1f31426a:PackageElementNode" />
+              <item name="src.main" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main1" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="flutter_media_notification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_media_notification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_media_notification" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_media_notification" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_media_notification" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_media_notification" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="flutter_media_notification" type="1abcf292:AndroidViewProjectNode" />
+              <item name="main" type="e9137016:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="1abcf292:AndroidViewProjectNode" />
+              <item name="main" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="flutter_media_notification" type="1abcf292:AndroidViewProjectNode" />
+              <item name="main" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="medianotification" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="hide&#9;null&#9;null" />
@@ -324,11 +432,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543249217379</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cleanup and fixes">
+      <created>1543413910616</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1543413910616</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="636" y="23" width="1284" height="1057" extended-state="0" />
+    <frame x="756" y="23" width="1164" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
@@ -338,6 +453,7 @@
       <window_info id="Build Variants" order="1" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007987" side_tool="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" sideWeight="0.49920127" weight="0.32916668" />
       <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.49920127" visible="true" weight="0.3375" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49920127" weight="0.32916668" />
@@ -347,7 +463,7 @@
       <window_info id="Captures" order="7" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="4" weight="0.27921498" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.3083779" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -367,7 +483,6 @@
       <window_info id="Designer" order="0" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" sideWeight="0.49920127" weight="0.32916668" />
       <window_info id="Build Variants" order="1" side_tool="true" />
-      <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49920127" visible="true" weight="0.3375" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -379,21 +494,22 @@
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007987" side_tool="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="2" side_tool="true" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info anchor="bottom" id="Logcat" order="3" sideWeight="0.49920127" weight="0.32916668" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49920127" weight="0.32916668" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49920127" weight="0.32916668" />
-      <window_info anchor="bottom" id="Find" order="8" />
       <window_info content_ui="combo" id="Project" order="4" weight="0.27921498" />
       <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.49920127" weight="0.32916668" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
     </layout-to-restore>
   </component>
@@ -414,7 +530,8 @@
     <MESSAGE value="WakeLock virkar" />
     <MESSAGE value="Improved wifi lock and heartbeat release" />
     <MESSAGE value="Prevent null error on out of order calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prevent null error on out of order calls" />
+    <MESSAGE value="Cleanup and fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup and fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -430,6 +547,40 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationReturnSlot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="65" column="19" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/media_notification.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -442,8 +593,7 @@
         <state relative-caret-position="915">
           <caret line="75" column="31" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="31" />
           <folding>
-            <element signature="e#4560#4561#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
           </folding>
         </state>
@@ -479,12 +629,6 @@
           <caret line="126" column="5" lean-forward="true" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7091#7092#0" expanded="true" />
-            <element signature="e#7139#7140#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8347#8348#0" expanded="true" />
-            <element signature="e#8618#8782#0" expanded="true" />
-            <element signature="e#8781#8782#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -501,8 +645,7 @@
         <state relative-caret-position="105">
           <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
           <folding>
-            <element signature="e#4560#4561#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
           </folding>
         </state>
@@ -538,12 +681,6 @@
           <caret line="118" column="10" lean-forward="true" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7091#7092#0" expanded="true" />
-            <element signature="e#7139#7140#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8347#8348#0" expanded="true" />
-            <element signature="e#8618#8782#0" expanded="true" />
-            <element signature="e#8781#8782#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -560,8 +697,7 @@
         <state relative-caret-position="1590">
           <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
           <folding>
-            <element signature="e#4560#4561#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
           </folding>
         </state>
@@ -597,12 +733,6 @@
           <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7091#7092#0" expanded="true" />
-            <element signature="e#7139#7140#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8347#8348#0" expanded="true" />
-            <element signature="e#8618#8782#0" expanded="true" />
-            <element signature="e#8781#8782#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,8 +749,7 @@
         <state relative-caret-position="1380">
           <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
           <folding>
-            <element signature="e#4560#4561#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
           </folding>
         </state>
@@ -649,12 +778,6 @@
           <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7091#7092#0" expanded="true" />
-            <element signature="e#7139#7140#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8347#8348#0" expanded="true" />
-            <element signature="e#8618#8782#0" expanded="true" />
-            <element signature="e#8781#8782#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -678,8 +801,7 @@
         <state relative-caret-position="1305">
           <caret line="100" column="19" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="19" />
           <folding>
-            <element signature="e#4560#4561#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
           </folding>
         </state>
@@ -691,12 +813,6 @@
           <caret line="29" column="11" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7091#7092#0" expanded="true" />
-            <element signature="e#7139#7140#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8347#8348#0" expanded="true" />
-            <element signature="e#8618#8782#0" expanded="true" />
-            <element signature="e#8781#8782#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,13 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -780,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/media_notification.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -801,13 +903,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/MediaNotificationPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-989">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        <state relative-caret-position="105">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
-            <element signature="e#4560#4561#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <marker date="1543412696187" expanded="true" signature="0:4599" ph="..." />
           </folding>
         </state>
@@ -822,17 +935,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/medianotification/NotificationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+        <state relative-caret-position="15">
+          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7091#7092#0" expanded="true" />
-            <element signature="e#7139#7140#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8347#8348#0" expanded="true" />
-            <element signature="e#8618#8782#0" expanded="true" />
-            <element signature="e#8781#8782#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>

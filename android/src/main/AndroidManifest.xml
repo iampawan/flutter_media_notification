@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.medianotification">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS" android:maxSdkVersion="4" />
+
 
     <application>
         <receiver android:name="NotificationReturnSlot"></receiver>
