@@ -72,33 +72,41 @@ public class MediaNotificationPlugin implements MethodCallHandler {
     }
 
     public static void callEvent(String event) {
+        if (channel != null) {
+            MediaNotificationPlugin.channel.invokeMethod(event, null, new Result() {
+                @Override
+                public void success(Object o) {
+                    // this will be called with o = "some string"
+                    Log.i(TAG, "Message callEvent: " + o.toString());
+                }
 
-        MediaNotificationPlugin.channel.invokeMethod(event, null, new Result() {
-            @Override
-            public void success(Object o) {
-                // this will be called with o = "some string"
-            }
+                @Override
+                public void error(String s, String s1, Object o) {
+                }
 
-            @Override
-            public void error(String s, String s1, Object o) {}
-
-            @Override
-            public void notImplemented() {}
-        });
+                @Override
+                public void notImplemented() {
+                }
+            });
+        } else {
+            Log.e(TAG, "Message callEvent - Channel Null");
+        }
     }
 
     public static void show(String title, String author, boolean play) {
         Log.i(TAG, "show");
+        if (nPanel != null) {
+            nPanel.releaseLocks();
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, importance);
-            channel.enableVibration(false);
-            channel.setSound(null, null);
-            NotificationManager notificationManager = registrar.context().getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-        if (nPanel != null) {
-            nPanel.releaseLocks();
+            if (channel != null) {
+                channel.enableVibration(false);
+                channel.setSound(null, null);
+                NotificationManager notificationManager = registrar.context().getSystemService(NotificationManager.class);
+                notificationManager.createNotificationChannel(channel);
+            }
         }
         nPanel = new NotificationPanel(registrar.context(), title, author, play);
     }
