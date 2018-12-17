@@ -12,7 +12,7 @@ public class NotificationReturnSlot extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.i("Debug", "Received event: " + intent.getAction().toString());
         switch (intent.getAction()) {
-            case "close":
+            case "dismiss":
                 MediaNotificationPlugin.callEvent("dismiss");
                 break;
 
