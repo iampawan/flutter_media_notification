@@ -75,18 +75,13 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (channel != null) {
             MediaNotificationPlugin.channel.invokeMethod(event, null, new Result() {
                 @Override
-                public void success(Object o) {
-                    // this will be called with o = "some string"
-                    Log.i(TAG, "Message callEvent: " + o.toString());
-                }
+                public void success(Object o) { }
 
                 @Override
-                public void error(String s, String s1, Object o) {
-                }
+                public void error(String s, String s1, Object o) { }
 
                 @Override
-                public void notImplemented() {
-                }
+                public void notImplemented() { }
             });
         } else {
             Log.e(TAG, "Message callEvent - Channel Null");
