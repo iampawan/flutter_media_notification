@@ -43,11 +43,16 @@ public class NotificationPanel extends Activity {
         this.author = author;
         this.play = play;
 
+        Intent dismissIntent = new Intent(parent, NotificationReturnSlot.class)
+                .setAction("dismiss");
+        PendingIntent pendingDismissIntent = PendingIntent.getBroadcast(parent, 0, dismissIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
         nBuilder = new NotificationCompat.Builder(parent, "media_notification")
-                .setOngoing(true)
+                .setOngoing(false)
                 .setSmallIcon(R.drawable.ic_stat_music_note)
                 .setVibrate(new long[]{0L})
-                .setSound(null);
+                .setSound(null)
+                .setDeleteIntent(pendingDismissIntent);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             nBuilder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);

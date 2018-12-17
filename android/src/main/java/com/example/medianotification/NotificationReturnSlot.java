@@ -4,12 +4,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
 public class NotificationReturnSlot extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        Log.i("Debug", "Recieved event: " + intent.getAction().toString());
         switch (intent.getAction()) {
+            case "close":
+                MediaNotificationPlugin.callEvent("close");
+                break;
+
             case "prev":
                 MediaNotificationPlugin.callEvent("prev");
                 break;
