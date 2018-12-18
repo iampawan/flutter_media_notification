@@ -48,7 +48,7 @@ public class NotificationPanel extends Activity {
         PendingIntent pendingDismissIntent = PendingIntent.getBroadcast(parent, 0, dismissIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         nBuilder = new NotificationCompat.Builder(parent, "media_notification")
-                .setOngoing(false)
+                .setOngoing(play)
                 .setSmallIcon(R.drawable.ic_stat_music_note)
                 .setVibrate(new long[]{0L})
                 .setSound(null)
@@ -308,4 +308,3 @@ public class NotificationPanel extends Activity {
     }
     */
 }
-
