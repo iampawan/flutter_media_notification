@@ -150,7 +150,3 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         hide();
     }
 }
-
-
-
-
