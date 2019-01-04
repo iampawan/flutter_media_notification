@@ -32,8 +32,9 @@ public class NotificationReturnSlot extends BroadcastReceiver {
                 String title = intent.getStringExtra("title");
                 String author = intent.getStringExtra("author");
                 String action = intent.getStringExtra("action");
+                boolean beint = intent.getBooleanExtra("beint",false);
 
-                MediaNotificationPlugin.show(title, author, action.equals("play"));
+                MediaNotificationPlugin.show(title, author, action.equals("play"), beint);
                 MediaNotificationPlugin.callEvent(action);
                 break;
 

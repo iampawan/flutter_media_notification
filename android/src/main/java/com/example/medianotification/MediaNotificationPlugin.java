@@ -42,7 +42,8 @@ public class MediaNotificationPlugin implements MethodCallHandler {
                 final String title = call.argument("title");
                 final String author = call.argument("author");
                 final boolean play = call.argument("play");
-                show(title, author, play);
+                final boolean beint = call.argument("beint");
+                show(title, author, play, beint);
                 result.success(null);
                 break;
 
@@ -88,7 +89,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         }
     }
 
-    public static void show(String title, String author, boolean play) {
+    public static void show(String title, String author, boolean play, boolean beint) {
         Log.i(TAG, "show");
         if (nPanel != null) {
             nPanel.releaseLocks();
@@ -103,7 +104,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
                 notificationManager.createNotificationChannel(channel);
             }
         }
-        nPanel = new NotificationPanel(registrar.context(), title, author, play);
+        nPanel = new NotificationPanel(registrar.context(), title, author, play, beint);
     }
 
     private void hide() {
@@ -117,7 +118,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.stopSound();
         } else {
-            show("RÚV", "", false);
+            //show("RÚV", "", false);
             nPanel.stopSound();
             hide();
         }
@@ -128,7 +129,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.getWifiLock();
         } else {
-            show("RÚV", "", false);
+            //show("RÚV", "", false);
             nPanel.getWifiLock();
             hide();
         }
@@ -140,7 +141,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.releaseLocks();
         } else {
-            show("RÚV", "", false);
+            //show("RÚV", "", false);
             nPanel.releaseLocks();
             hide();
         }

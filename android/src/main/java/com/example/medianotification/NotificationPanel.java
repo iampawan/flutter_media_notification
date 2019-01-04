@@ -32,16 +32,18 @@ public class NotificationPanel extends Activity {
     private String title;
     private String author;
     private boolean play;
+    private boolean beint;
     private WifiManager.WifiLock wifiLock;
     private PowerManager.WakeLock wakeLock;
     private AudioManager audioManager;
     PowerManager powerManager;
 
-    public NotificationPanel(Context parent, String title, String author, boolean play) {
+    public NotificationPanel(Context parent, String title, String author, boolean play, boolean beint) {
         this.parent = parent;
         this.title = title;
         this.author = author;
         this.play = play;
+        this.beint = beint;
 
         Intent dismissIntent = new Intent(parent, NotificationReturnSlot.class)
                 .setAction("dismiss");
@@ -71,6 +73,15 @@ public class NotificationPanel extends Activity {
             remoteView.setImageViewResource(R.id.toggle, R.drawable.baseline_pause_black_48);
         } else {
             remoteView.setImageViewResource(R.id.toggle, R.drawable.baseline_play_arrow_black_48);
+        }
+
+        if (this.beint) {
+            remoteView.setImageViewResource(R.id.prev, R.drawable.baseline_replay_30_black_36);
+            remoteView.setImageViewResource(R.id.next, R.drawable.baseline_skip_next_black_36);
+        } else {
+            remoteView.setImageViewResource(R.id.prev, R.drawable.baseline_replay_30_black_36);
+            remoteView.setImageViewResource(R.id.next, R.drawable.baseline_forward_30_black_36
+            );
         }
 
         setListeners(remoteView);
@@ -198,7 +209,9 @@ public class NotificationPanel extends Activity {
             .setAction("toggle")
             .putExtra("title", this.title)
             .putExtra("author", this.author)
-            .putExtra("action", !this.play ? "play" : "pause");
+            .putExtra("action", !this.play ? "play" : "pause")
+            .putExtra("beint", this.beint);
+
         PendingIntent pendingIntent = PendingIntent.getBroadcast(parent, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         view.setOnClickPendingIntent(R.id.toggle, pendingIntent);
 
