@@ -119,7 +119,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
             nPanel.stopSound();
         } else {
             //show("RÚV", "", false);
-            nPanel.stopSound();
+            //nPanel.stopSound();
             hide();
         }
     }
@@ -130,7 +130,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
             nPanel.getWifiLock();
         } else {
             //show("RÚV", "", false);
-            nPanel.getWifiLock();
+            //nPanel.getWifiLock();
             hide();
         }
 
@@ -142,7 +142,7 @@ public class MediaNotificationPlugin implements MethodCallHandler {
             nPanel.releaseLocks();
         } else {
             //show("RÚV", "", false);
-            nPanel.releaseLocks();
+            //nPanel.releaseLocks();
             hide();
         }
     }
