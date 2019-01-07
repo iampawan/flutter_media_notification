@@ -118,8 +118,8 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.stopSound();
         } else {
-            //show("RÚV", "", false);
-            //nPanel.stopSound();
+            show("RÚV", "", false, false);
+            nPanel.stopSound();
             hide();
         }
     }
@@ -129,8 +129,8 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.getWifiLock();
         } else {
-            //show("RÚV", "", false);
-            //nPanel.getWifiLock();
+            show("RÚV", "", false, false);
+            nPanel.getWifiLock();
             hide();
         }
 
@@ -141,8 +141,8 @@ public class MediaNotificationPlugin implements MethodCallHandler {
         if (nPanel != null) {
             nPanel.releaseLocks();
         } else {
-            //show("RÚV", "", false);
-            //nPanel.releaseLocks();
+            show("RÚV", "", false, false);
+            nPanel.releaseLocks();
             hide();
         }
     }
