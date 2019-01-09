@@ -235,7 +235,7 @@ public class NotificationPanel extends Activity {
         nManager.cancel(NOTIFICATION_ID);
     }
 
-    /*
+
     public void closeNotificationIfNotRunning() {
         Log.i(TAG, "Gísli's Heartbeat");
         //return;
@@ -247,7 +247,7 @@ public class NotificationPanel extends Activity {
             notificationCancel();
         }
     }
-    */
+
 
     public void stopSound() {
         requestAudioFocus();
@@ -259,7 +259,7 @@ public class NotificationPanel extends Activity {
         requestAudioFocus();
         requestWifiLock();
 
-        /*
+
         // Setup listener
         if (t == null) {
             t = new Timer();
@@ -270,19 +270,19 @@ public class NotificationPanel extends Activity {
                 }
             }, 1000, 1000);
         }
-        */
+
     }
 
     public void releaseLocks() {
         releaseWakeLock();
         releaseAudioFocus();
         releaseWifiLock();
-        /*
+
         if (t != null) {
             t.cancel();
             t = null;
         }
-        */
+
     }
 
     @Override
@@ -290,7 +290,7 @@ public class NotificationPanel extends Activity {
         Log.i(TAG, "Media Gardina onDestroy");
         nManager.cancel(NOTIFICATION_ID);
         releaseLocks();
-        //t.cancel();
+        t.cancel();
         super.onDestroy();
     }
 
@@ -304,7 +304,7 @@ public class NotificationPanel extends Activity {
         notificationCancel();
     }
 
-    /*
+
     private boolean isAppRunning(Context context) {
         ActivityManager m = (ActivityManager) context.getSystemService( ACTIVITY_SERVICE );
         List<ActivityManager.RunningTaskInfo> runningTaskInfoList =  m.getRunningTasks(10);
@@ -319,5 +319,5 @@ public class NotificationPanel extends Activity {
         }
         return true; // App is in background or foreground
     }
-    */
+
 }
