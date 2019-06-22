@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/media_notification.iml" filepath="$PROJECT_DIR$/media_notification.iml" />
-      <module fileurl="file://$PROJECT_DIR$/media_notification_android.iml" filepath="$PROJECT_DIR$/media_notification_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_media_notification.iml" filepath="$PROJECT_DIR$/flutter_media_notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/src/main/main.iml" filepath="$PROJECT_DIR$/android/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/app/src/main/main1.iml" filepath="$PROJECT_DIR$/example/android/app/src/main/main1.iml" />
     </modules>
   </component>
 </project>
